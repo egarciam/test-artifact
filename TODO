@@ -1,0 +1,31 @@
+1.- Incluir gestion Nodos invertidos como opcion (es decir, un dependencia entre dos proyectos para un mismo sistema debe ir en un solo sentido (Hecho)
+
+13/01/2017
+2.- Gestion de la coleccion bloques para gestionar cambio de release en un proyecto (en irc) Una posible solucion es hacer un barrido de blocks y verificar si los proyectos enumerados en cada bloque/release
+continuan asignados a la misma. En caso de que no esten borrar el resgistro del bloque y eliminar el bloque en el document ode proyecto en HGF. Esta podria ser una tarea que se lance en el inicio del proceso
+para que la info que los ordenamientos que se hacen despues sea consistente. HECHO ... pendiente de pruebas exhaustivas :-)
+
+3.- Gestion de bloques en el caso de que una dependencia se inactive, esto realmente afectara a si todas las dependencias de un proyecto estan inactivas. En caso afirmativo habria que sacar el proyecto del 
+	bloque en cuestion. (Tenerlo en cuenta en query de visualizacion)
+	
+	Al inactivar una dependencia puede cambiar la relacion del proyecto con otros y por lo mismo la desasigancion de su bloque. Afectara si la dependencia en cuestion es salvable o no y si el proyecto es 
+	salvable o no. Si el proyecto es salvable estara en el bloque S1 en cualquier caso con lo cual no habra problema.
+	Si el proyecto es no salvable puede que cambie de grupo al eliminar una dependencia (tambien habra que analizar si la dependencia en cuestion que se inactiva es salvable o no)
+	
+	En el sentido contrario. Si ya existen las tablas y tienen datos y un proyecto esta asignado a un bloque el hecho de dar de alta una dependencia nueva puede tener efectos.
+	Si el proyecto es salvable y se da de alta una depoendencia salvable el efecto sera nulo
+	Si el proyecto es salvable y se da de alta una dependencia no salvable el proyecto cambiara de bloque por lo que habra que actualizar el bloque del proyecto tras la reorganizacion y ademas
+	borrar el proyecto del grupo salvable (explicito) y moverlo al grupo que le corresponda (esto lo hara la reorganizacion)
+	
+	
+	
+4.-	En el caso de que la modificacion de una dependencia suponga un bloque diferente (salvable -> no salvable seguro y lo contrario tambien). Estara determinado por todas las dependencias del proyecto(s) 
+	en cuestion (Por solucionar). Una posible solucion es borrar siempre antes de empezar y hacer el calculo desde cero .... pero se pierde historico si se quiere
+5.- Revisitar el tema de la release a la hora de cargar. Esto simplificaria el movimiento de releases (Tenerlo en cuenta en visualizacion portal)
+6.- Mejorar logs por proveedor y por error
+
+
+7.- Historico de dependencias. Incluir un subdocumento tipo timeline en cada dependencia con la fecha de creacion y un array con los diferentes cambios y sus fechas. Inclusive el fichero que origino el cambio
+
+
+8.- Instalar en pc servidor
