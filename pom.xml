@@ -12,7 +12,7 @@
 -->
     <repository>
       <id>gcsw-tco-nexus</id>
-      <url>http://gcs-tools.tk:8081/nexus/</url>
+      <url>http://gcs-tools.tk:8081/</url>
     </repository>
 
 <!--
