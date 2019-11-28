@@ -4,10 +4,17 @@
   <artifactId>${artifactId}</artifactId>
   <version>${revision}${sha1}${changelist}</version>
   <repositories>
+    <!--
     <repository>
       <id>local</id>
       <url>file://${HOME}/.m2/repository</url>
     </repository>
+-->
+    <repository>
+      <id>gcsw-tco-nexus</id>
+      <url>http://gcs-tools.tk:8081/</url>
+    </repository>
+
 <!--
     <repository>
       <id>nexus TDC</id>
