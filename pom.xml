@@ -184,7 +184,10 @@
       <groupId>es.orange.dsi.cgsw</groupId>
       <artifactId>sample-app</artifactId>
       <version>0.0.2</version>
+      <!--
       <type>test-jar</type>
+      -->
+      <classifier>tests</classifier>
       <scope>test</scope>
     </dependency>
   </dependencies>
