@@ -4,10 +4,17 @@
   <artifactId>${artifactId}</artifactId>
   <version>${revision}${sha1}${changelist}</version>
   <repositories>
+    <!--
     <repository>
       <id>local</id>
       <url>file://${HOME}/.m2/repository</url>
     </repository>
+-->
+    <repository>
+      <id>gcsw-tco-nexus</id>
+      <url>http://gcs-tools.tk:8081/repository/gcsw-releases/</url>
+    </repository>
+
 <!--
     <repository>
       <id>nexus TDC</id>
@@ -176,8 +183,11 @@
     <dependency>
       <groupId>es.orange.dsi.cgsw</groupId>
       <artifactId>sample-app</artifactId>
-      <version>0.0.1</version>
+      <version>0.0.2</version>
+      
       <type>test-jar</type>
+     
+      <classifier>tests</classifier>
       <scope>test</scope>
     </dependency>
   </dependencies>
